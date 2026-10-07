@@ -1,0 +1,1 @@
+<template><section><h1>Cartas para revisar</h1><div class="card"><p>Base para barajas, sesiones de repaso y progreso.</p></div></section></template>

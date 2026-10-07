@@ -1,0 +1,1 @@
+<template><section><h1>Variantes</h1><div class="card"><p>Las futuras variantes del centro y oeste se guardarán con fuente, región y variedad explícitas, separadas de las entradas IDIEZ.</p></div></section></template>

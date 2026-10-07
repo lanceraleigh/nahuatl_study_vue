@@ -1,0 +1,1 @@
+<template><section><h1>Traductor / conjugador</h1><div class="card"><p>Espacio preparado para reglas morfológicas, conjugación y traducción asistida.</p></div></section></template>

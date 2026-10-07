@@ -1,0 +1,66 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #202124;
+  background: #f5f6f3;
+  --panel: #fff;
+  --border: #d9ded8;
+  --muted: #68716b;
+  --accent: #315c49;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px max(18px, calc((100vw - 1100px) / 2));
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(10px);
+}
+.brand { font-weight: 900; text-decoration: none; letter-spacing: .08em; }
+nav { display: flex; gap: 14px; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--muted); }
+nav a.router-link-active { color: var(--accent); font-weight: 700; }
+
+.app-shell { width: min(1100px, calc(100% - 28px)); margin: 34px auto 70px; }
+.lead { max-width: 720px; line-height: 1.6; }
+.muted { color: var(--muted); }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 14px 0;
+}
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.tool { display: flex; flex-direction: column; gap: 8px; text-decoration: none; }
+.tool:hover { border-color: var(--accent); }
+.form-grid { display: grid; grid-template-columns: 1fr 180px 130px; gap: 12px; align-items: end; }
+label { display: grid; gap: 7px; font-weight: 650; }
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 11px 12px;
+  background: #fff;
+  color: inherit;
+}
+.mode-toggle { display: flex; gap: 22px; margin-bottom: 16px; }
+.mode-toggle label { display: flex; grid-template-columns: auto 1fr; align-items: center; gap: 7px; }
+.mode-toggle input { width: auto; }
+.result-card h2 { margin-top: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { padding: 7px 10px; border: 1px solid var(--border); border-radius: 999px; }
+@media (max-width: 720px) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  .form-grid { grid-template-columns: 1fr; }
+}

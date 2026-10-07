@@ -1,0 +1,1 @@
+<template><section><h1>Modos de ortografía</h1><div class="card"><p>Las ortografías se implementarán como capas de visualización; la forma original de la fuente se conservará.</p></div></section></template>

@@ -1,0 +1,1 @@
+<template><section><h1>Actividades de educación infantil</h1><div class="card"><p>Espacio para asociación imagen-palabra, colores, números, memoria y actividades auditivas.</p></div></section></template>

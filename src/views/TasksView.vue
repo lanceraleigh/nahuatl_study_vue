@@ -1,0 +1,1 @@
+<template><section><h1>Tareas interactivas digitales</h1><div class="card"><p>Aquí podremos cargar actividades por unidad, tipo y dificultad.</p></div></section></template>
