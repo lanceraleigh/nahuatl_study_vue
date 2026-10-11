@@ -1,6 +1,7 @@
 <template>
   <header class="site-header">
-    <RouterLink class="brand" to="/">NĀHUATL</RouterLink>
+    <RouterLink class="brand" to="/">IDIEZ
+    </RouterLink>
     <nav>
       <RouterLink to="/diccionario">Diccionario</RouterLink>
       <RouterLink to="/traductor-conjugador">Conjugador</RouterLink>

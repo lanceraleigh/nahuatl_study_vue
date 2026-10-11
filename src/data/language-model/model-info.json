@@ -1,0 +1,39 @@
+{
+  "model": "word trigram with bigram/unigram backoff",
+  "variety": "Huasteca Veracruzana (Chicontepec-oriented)",
+  "sentences": 27241,
+  "tokens": 180921,
+  "vocabulary": 20754,
+  "sources": [
+    {
+      "source_id": "cenyahtoc_cintli_tonacayo",
+      "sentences": 1994,
+      "tokens": 13008
+    },
+    {
+      "source_id": "tototatahhuan_ininixtlamatiliz",
+      "sentences": 661,
+      "tokens": 3368
+    },
+    {
+      "source_id": "nahui_tonatiuh",
+      "sentences": 106,
+      "tokens": 714
+    },
+    {
+      "source_id": "tlahtolxitlauhcayotl",
+      "sentences": 26140,
+      "tokens": 171711
+    },
+    {
+      "source_id": "tlahtolixcopincayotl",
+      "sentences": 102,
+      "tokens": 558
+    }
+  ],
+  "notes": [
+    "Source spellings are preserved; tokens are lowercased for modeling.",
+    "Corpus cleaning is conservative and heuristic; review corpus/cleaned/huasteca_veracruzana.jsonl before treating it as gold data.",
+    "Other uploaded Nahuatl varieties were intentionally excluded from this first model."
+  ]
+}

@@ -53,3 +53,39 @@ Then build with:
    npm run build
 
 The deployable output will be in `dist/`.
+
+
+## Trigram predictor
+
+This version includes a first word-level trigram model trained from the uploaded
+Chicontepec / Huasteca Veracruzana-oriented corpus.
+
+Prediction order:
+1. trigram: P(next | previous two words)
+2. bigram backoff: P(next | previous word)
+3. unigram backoff: P(next)
+4. prefix fallback when the user has begun typing a word
+
+Model files live in `src/data/language-model/`.
+The reviewed/source-aware corpus lives in `corpus/cleaned/`.
+The reusable trainer is `scripts/train_ngrams.py`.
+
+To retrain after editing the JSONL corpus:
+
+```powershell
+python scripts/train_ngrams.py corpus/cleaned/huasteca_veracruzana.jsonl src/data/language-model
+```
+
+Then run:
+
+```powershell
+npm run dev
+```
+
+Open the Predictor page and type a few words. Clicking a suggestion inserts it.
+
+### Important corpus note
+
+This is a first automatic extraction, not a hand-corrected gold corpus. Source
+metadata is retained so questionable sentences can be audited. Other Nahuatl
+varieties should be trained as separate models rather than silently merged.

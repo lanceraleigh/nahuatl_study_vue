@@ -1,0 +1,86 @@
+[
+  {
+    "root": "nehnemi",
+    "class": 2,
+    "transitive": false,
+    "es": "caminar",
+    "en": "walk"
+  },
+  {
+    "root": "ihcihui",
+    "class": 2,
+    "transitive": false,
+    "es": "apurarse",
+    "en": "hurry up"
+  },
+  {
+    "root": "ihza",
+    "class": 1,
+    "transitive": false,
+    "es": "despertarse",
+    "en": "wake up"
+  },
+  {
+    "root": "choloa",
+    "class": 3,
+    "transitive": false,
+    "es": "huir",
+    "en": "flee"
+  },
+  {
+    "root": "maltia",
+    "class": 3,
+    "transitive": false,
+    "es": "bañarse",
+    "en": "bathe"
+  },
+  {
+    "root": "itta",
+    "class": 1,
+    "transitive": true,
+    "es": "ver algo/alguien",
+    "en": "see something/someone"
+  },
+  {
+    "root": "cua",
+    "class": 4,
+    "transitive": true,
+    "es": "comer algo",
+    "en": "eat something"
+  },
+  {
+    "root": "celia",
+    "class": 3,
+    "transitive": true,
+    "es": "recibir algo/alguien",
+    "en": "receive something/someone"
+  },
+  {
+    "root": "poloa",
+    "class": 3,
+    "transitive": true,
+    "es": "perder algo",
+    "en": "lose something"
+  },
+  {
+    "root": "piya",
+    "class": 2,
+    "transitive": true,
+    "es": "tener algo",
+    "en": "have something"
+  },
+  {
+    "root": "amati",
+    "class": 2,
+    "transitive": true,
+    "es": "gustar/agradar algo",
+    "en": "like something"
+  },
+  {
+    "root": "temoa",
+    "class": 3,
+    "transitive": true,
+    "es": "buscar algo/alguien",
+    "en": "look for something/someone"
+  }
+]

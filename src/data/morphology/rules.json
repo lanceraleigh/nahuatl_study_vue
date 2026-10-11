@@ -1,0 +1,74 @@
+{
+  "source": "IDIEZ Modern Nahuatl Grammar 2022, Huasteca Veracruzana",
+
+  "subjects": {
+    "1sg": {
+      "label": "na — yo",
+      "prefix": "ni",
+      "plural": false
+    },
+    "2sg": {
+      "label": "ta — tú",
+      "prefix": "ti",
+      "plural": false
+    },
+    "3sg": {
+      "label": "él / ella",
+      "prefix": "",
+      "plural": false
+    },
+    "1pl": {
+      "label": "tohhuantin — nosotros",
+      "prefix": "ti",
+      "plural": true
+    },
+    "2pl": {
+      "label": "inmohhuantin — ustedes",
+      "prefix": "in",
+      "plural": true
+    },
+    "3pl": {
+      "label": "ellos / ellas",
+      "prefix": "",
+      "plural": true
+    }
+  },
+
+  "objects": {
+    "none": {
+      "label": "— sin objeto específico —",
+      "prefix": ""
+    },
+    "1sg": {
+      "label": "nech- — me",
+      "prefix": "nech"
+    },
+    "2sg": {
+      "label": "mitz- — te",
+      "prefix": "mitz"
+    },
+    "3sg": {
+      "label": "c-/qu-/qui- — lo / la",
+      "prefix": "AUTO3"
+    },
+    "1pl": {
+      "label": "tech- — nos",
+      "prefix": "tech"
+    },
+    "2pl": {
+      "label": "mech- — los / las a ustedes",
+      "prefix": "mech"
+    },
+    "3pl": {
+      "label": "quin- — los / las",
+      "prefix": "quin"
+    }
+  },
+
+  "classes": {
+    "1": "La raíz del pretérito es igual a la del presente. Singular -c; plural -queh.",
+    "2": "Se elimina la vocal final en el pretérito. Singular -qui; plural -queh.",
+    "3": "Raíces terminadas en -ia o -oa. Se elimina la a final y se añade h en el pretérito.",
+    "4": "Clase restringida: pa, cua, mama, nahua y algunos derivados. Se añade h a la raíz en el pretérito."
+  }
+}
