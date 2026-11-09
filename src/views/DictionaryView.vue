@@ -362,4 +362,9 @@ button:hover { background:#e4efe8; }
 
 details { margin:14px 0; }
 
+
+:global([data-theme="dark"]) button { background:var(--action-bg); color:var(--action-text); border-color:var(--border); }
+:global([data-theme="dark"]) button:hover { background:#3c5445; }
+:global([data-theme="dark"]) .dictionary-danger, :global([data-theme="dark"]) .dictionary-alert { color:#ffb6b6; }
+:global([data-theme="dark"]) .dictionary-notice { color:#a5ddba; }
 </style>

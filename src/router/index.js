@@ -13,6 +13,7 @@ import NotesView from "../views/NotesView.vue";
 import AboutView from "../views/AboutView.vue";
 import WhoAreWeView from "../views/WhoAreWeView.vue";
 import ContactView from "../views/ContactView.vue";
+import InstallView from "../views/InstallView.vue";
 
 export default createRouter({
   // Hash history works cleanly on GitHub Pages without server rewrite rules.
@@ -30,6 +31,7 @@ export default createRouter({
     // { path: "/variantes", component: VariantsView },
     { path: "/about", component: AboutView },
     { path: "/who-are-we", component: WhoAreWeView },
-    { path: "/contact", component: ContactView }
+    { path: "/contact", component: ContactView },
+    { path: "/instalar", component: InstallView }
   ]
 });

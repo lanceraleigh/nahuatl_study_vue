@@ -9,6 +9,8 @@ alaxox moztla. Es necesario distinguir la raíz del verbo, en el caso de niccohu
 Cohua es el verbo que se tiene que buscar en el diccionario:
     </p>
 
+    <p><RouterLink to="/instalar">📱 Instala la aplicación para estudiar sin internet →</RouterLink></p>
+
     <div class="tool-grid">
       <RouterLink class="card tool" to="/diccionario"><strong>Diccionario</strong><span>Occidente ↔ Macehualli</span></RouterLink>
       <!-- <RouterLink class="card tool" to="/traductor-conjugador"><strong>Traductor / conjugador</strong><span>Morfología y práctica verbal</span></RouterLink> -->

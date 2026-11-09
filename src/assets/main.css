@@ -6,6 +6,10 @@
   --border: #d9ded8;
   --muted: #68716b;
   --accent: #315c49;
+  --field: #ffffff;
+  --header-bg: rgba(255,255,255,.94);
+  --action-bg: #f4f8f5;
+  --action-text: #234b39;
 }
 
 * { box-sizing: border-box; }
@@ -23,7 +27,7 @@ button, input, select, textarea { font: inherit; }
   justify-content: space-between;
   padding: 14px max(18px, calc((100vw - 1100px) / 2));
   border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,.94);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
 }
 .brand { font-weight: 900; text-decoration: none; letter-spacing: .08em; }
@@ -41,7 +45,7 @@ nav a.router-link-active { color: var(--accent); font-weight: 700; }
   justify-content: space-between;
   padding: 14px max(18px, calc((100vw - 1100px) / 2));
   border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,.94);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
 }
 
@@ -65,7 +69,7 @@ input, select, textarea {
   border: 1px solid var(--border);
   border-radius: 9px;
   padding: 11px 12px;
-  background: #fff;
+  background: var(--field);
   color: inherit;
 }
 .mode-toggle { display: flex; gap: 22px; margin-bottom: 16px; }
@@ -87,3 +91,37 @@ input, select, textarea {
 .result-card .dictionary-actions button { cursor:pointer; border:1px solid var(--border); background:#f5f8f5; border-radius:8px; padding:8px 12px; }
 .result-card .dictionary-actions .dictionary-danger { color:#8c2c2c; }
 .result-card details p { overflow-wrap:anywhere; }
+
+/* Tema oscuro: variables compartidas y ajustes de contraste */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  color: #e8eee9;
+  background: #171e1a;
+  --panel: #232d27;
+  --border: #47584d;
+  --muted: #b8c8bc;
+  --accent: #a5ddba;
+  --field: #202923;
+  --header-bg: rgba(23,30,26,.96);
+  --action-bg: #304337;
+  --action-text: #e4f4e9;
+  --card-bg: #232d27;
+}
+.theme-toggle { display:inline-flex; align-items:center; justify-content:center; gap:.35rem; padding:.4rem .65rem; border:1px solid var(--border); border-radius:8px; background:var(--panel); color:inherit; cursor:pointer; white-space:nowrap; }
+.theme-toggle:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+:root[data-theme="dark"] .offline-status { color:var(--accent); }
+:root[data-theme="dark"] .dictionary-status { background:#304b3a; color:#d5f5de; }
+:root[data-theme="dark"] .result-card .dictionary-actions button,
+:root[data-theme="dark"] .dictionary-actions button,
+:root[data-theme="dark"] .dictionary-import,
+:root[data-theme="dark"] .dictionary-management-row button,
+:root[data-theme="dark"] .device-tabs button:not(.selected) { background:var(--action-bg); color:var(--action-text); border-color:var(--border); }
+:root[data-theme="dark"] .install-panel { background:var(--panel); border-color:var(--border); }
+:root[data-theme="dark"] .install-panel h3 { color:var(--accent); }
+:root[data-theme="dark"] .ready, :root[data-theme="dark"] .dictionary-notice { color:#a5ddba; }
+:root[data-theme="dark"] .dictionary-danger, :root[data-theme="dark"] .dictionary-alert { color:#ffb6b6; }
+:root[data-theme="dark"] .dictionary-management-row { border-color:var(--border); }
+:root[data-theme="dark"] .device-tabs button.selected,
+:root[data-theme="dark"] .update-button { background:#a5ddba; color:#17251b; border-color:#a5ddba; }
+:root[data-theme="dark"] .transitivity-control button.selected { background:#a5ddba; color:#17251b; }
+:root[data-theme="dark"] input, :root[data-theme="dark"] select, :root[data-theme="dark"] textarea { background:var(--field); color:inherit; border-color:var(--border); }
