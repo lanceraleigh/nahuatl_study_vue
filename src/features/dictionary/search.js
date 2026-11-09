@@ -1,7 +1,86 @@
 import { normalize, tokenize } from "./normalize";
+import "../morphology/conjugate"
+import "../morphology/dictionaryMorphology"
 
 function escapeRegex(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function nahuatlSpecificNormalization(text) {
+  const possibleAffixesAndRootForms = [
+    {affix: "ni", affixType: "prefix", rootTransformation: ""}, 
+    {affix: "ti", affixType: "prefix", rootTransformation: ""},
+    {affix: "in", affixType: "prefix", rootTransformation: ""},
+    {affix: "qui", affixType: "prefix", rootTransformation: ""},
+    {affix: "nic", affixType: "prefix", rootTransformation: ""},
+    {affix: "tic", affixType: "prefix", rootTransformation: ""},
+    {affix: "inqui", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+    {affix: "ni", affixType: "prefix", rootTransformation: ""},
+  ]
+
+  return text
 }
 
 function scoreDefinition(definition, query) {
