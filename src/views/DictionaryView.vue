@@ -172,15 +172,15 @@ async function uploadBackup(event) {
 
   <section>
 
-    <h1>Diccionario</h1>
+    <h1>{{ $t("dictionary.title") }}</h1>
 
-    <p class="muted">Diccionario IDIEZ de la Huasteca Veracruzana. La versión original permanece intacta; tus cambios se guardan solo en este navegador.</p>
+    <p class="muted">{{ $t("dictionary.intro") }}</p>
 
     <div class="dictionary-toolbar">
 
-      <button type="button" @click="newEntry">+ Nueva entrada</button>
+      <button type="button" @click="newEntry">+ {{ $t("dictionary.addEntry") }}</button>
 
-      <button type="button" @click="showManagement = !showManagement">{{ showManagement ? 'Cerrar administración' : 'Administrar diccionario' }}</button>
+      <button type="button" @click="showManagement = !showManagement">{{ showManagement ? $t("dictionary.closeManagement") : $t("dictionary.manage") }}</button>
 
     </div>
 
@@ -192,7 +192,7 @@ async function uploadBackup(event) {
 
     <div v-if="showManagement" class="card">
 
-      <h2>Mis cambios</h2>
+      <h2>{{ $t("dictionary.myChanges") }}</h2>
 
       <p>{{ edits.added.length }} entradas nuevas · {{ changedCount }} editadas · {{ edits.hidden.length }} ocultas</p>
 

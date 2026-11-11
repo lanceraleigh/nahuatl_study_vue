@@ -262,16 +262,18 @@ export function deconjugate(form, options = {}) {
     compareRoots(a.root, b.root)
   );
 
-  return {
-    form,
-    primary: roots[0] ?? null,
-    secondary: roots[1] ?? null,
-    tertiary: roots[2] ?? null,
-    alternatives: roots.slice(1),
-    analyses,
-    roots,
-    ambiguous: roots.length > 1
-  };
+  return roots[0];
+  // return {
+    
+    // form,
+    // primary: roots[0] ?? null,
+    // secondary: roots[1] ?? null,
+    // tertiary: roots[2] ?? null,
+    // alternatives: roots.slice(1),
+    // analyses,
+    // roots,
+    // ambiguous: roots.length > 1
+  // };
 }
 
 /** Return the shortest verified root. */

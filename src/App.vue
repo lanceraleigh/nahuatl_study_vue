@@ -1,15 +1,16 @@
 <script setup>
 import { offlineReady, updateAvailable, isOnline, applyUpdate } from "./services/offline";
 import AppHeader from "./components/layout/AppHeader.vue";
-import AppFooter from "./components/layout/AppFooter.vue"
+import AppFooter from "./components/layout/AppFooter.vue";
+
 </script>
 
 <template>
   <AppHeader />
   <div class="offline-status" role="status" aria-live="polite">
-    <span v-if="!isOnline">Sin conexión · {{ offlineReady ? "Aplicación disponible" : "Contenido sin conexión no confirmado" }}</span>
-    <span v-else-if="offlineReady">Disponible sin conexión</span>
-    <span v-if="updateAvailable" class="offline-update">Nueva versión disponible <button type="button" @click="applyUpdate">Actualizar ahora</button></span>
+    <span v-if="!isOnline">{{ $t("install.offlineStatus") }} · {{ offlineReady ? $t("install.offlineAvailable") : $t("install.offlineNotConfirmed") }}</span>
+    <span v-else-if="offlineReady">{{ $t("install.offlineAvailable") }}</span>
+    <span v-if="updateAvailable" class="offline-update">{{ $t("install.updateAvailable") }} <button type="button" @click="applyUpdate">{{ $t("install.updateNow") }}</button></span>
   </div>
   <main class="app-shell">
     <RouterView />

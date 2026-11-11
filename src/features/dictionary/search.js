@@ -1,84 +1,15 @@
 import { normalize, tokenize } from "./normalize";
 import "../morphology/conjugate"
 import "../morphology/dictionaryMorphology"
+import "../morphology/deconjugate"
+import { deconjugate } from "../morphology/deconjugate";
 
 function escapeRegex(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function nahuatlSpecificNormalization(text) {
-  const possibleAffixesAndRootForms = [
-    {affix: "ni", affixType: "prefix", rootTransformation: ""}, 
-    {affix: "ti", affixType: "prefix", rootTransformation: ""},
-    {affix: "in", affixType: "prefix", rootTransformation: ""},
-    {affix: "qui", affixType: "prefix", rootTransformation: ""},
-    {affix: "nic", affixType: "prefix", rootTransformation: ""},
-    {affix: "tic", affixType: "prefix", rootTransformation: ""},
-    {affix: "inqui", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-    {affix: "ni", affixType: "prefix", rootTransformation: ""},
-  ]
+  // const possibleAffixesAndRootForms = 
 
   return text
 }
@@ -185,10 +116,14 @@ export function searchOccidente(dictionary, query, language = "Both", limit = 20
 }
 
 export function searchMacehualli(dictionary, query, limit = 20) {
-  const q = normalize(query);
+  const q = deconjugate(normalize(query));
+  console.log(q)
+
   if (!q) return [];
 
   const results = [];
+
+
 
   for (const entry of dictionary) {
     const headword = normalize(entry.nahuatl);
