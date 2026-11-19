@@ -4,7 +4,7 @@ import { entryKind, verbTable, nounForms, adjectiveNote } from "../../features/m
 const props = defineProps({ entry: { type: Object, required: true } });
 const kind = computed(() => entryKind(props.entry));
 const tense = ref("present");
-const object = ref("none");
+const object = ref("3sg");
 const animate = ref(false);
 const suffix = ref("");
 const pluralPossessed = ref(false);
@@ -26,7 +26,7 @@ const transitive = computed(() => props.entry.part_of_speech === "tlat" || Strin
             <option value="conditional">Condicional</option>
           </select>
         </label>
-        <label v-if="transitive">Objeto
+        <label>Objeto
           <select v-model="object">
             <option value="none">Sin marcador (ilustrativo)</option>
             <option value="1sg">me</option><option value="2sg">te</option>

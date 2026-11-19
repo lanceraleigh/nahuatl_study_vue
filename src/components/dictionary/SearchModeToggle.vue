@@ -4,16 +4,10 @@ defineEmits(["update:modelValue"]);
 </script>
 
 <template>
+  <div>Buscar definicion desde:</div>
   <div class="mode-toggle" role="radiogroup" aria-label="Modo de búsqueda">
-    <label>
-      <input
-        type="radio"
-        value="occidente"
-        :checked="modelValue === 'occidente'"
-        @change="$emit('update:modelValue', 'occidente')"
-      />
-      Occidente
-    </label>
+    
+
     <label>
       <input
         type="radio"
@@ -21,7 +15,17 @@ defineEmits(["update:modelValue"]);
         :checked="modelValue === 'macehualli'"
         @change="$emit('update:modelValue', 'macehualli')"
       />
-      Macehualli
+      Nahuatl
     </label>
+    <label>
+      <input
+        type="radio"
+        value="occidente"
+        :checked="modelValue === 'occidente'"
+        @change="$emit('update:modelValue', 'occidente')"
+      />
+      Otra lengua
+    </label>
+    
   </div>
 </template>

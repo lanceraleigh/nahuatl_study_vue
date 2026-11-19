@@ -16,7 +16,7 @@ import { identifyBaseline, combineDictionary, createEntry, exportEdits, hideEntr
 
 const query = ref('');
 
-const mode = ref('occidente');
+const mode = ref('macehualli');
 
 const language = ref('Both');
 

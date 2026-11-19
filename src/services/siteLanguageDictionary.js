@@ -577,9 +577,9 @@ export const siteLanguageDictionary = {
       "pt-BR": "Marcador de argumento"
     },
     "secondaryForm": {
-      "en": "Secondary form",
-      "es": "Forma secundaria",
-      "pt-BR": "Forma secundária"
+      "en": "Past tense",
+      "es": "Forma del pasado",
+      "pt-BR": "Forma do passado"
     },
     "possessedForm": {
       "en": "Possessed form",
@@ -632,9 +632,9 @@ export const siteLanguageDictionary = {
       "pt-BR": "Classificação editorial compartilhada"
     },
     "documentedForm": {
-      "en": "Documented form",
-      "es": "Forma documentada",
-      "pt-BR": "Forma documentada"
+      "en": "Past tense",
+      "es": "Forma del pasado",
+      "pt-BR": "Forma do passado"
     },
     "originalEntry": {
       "en": "Original entry (preserved)",
