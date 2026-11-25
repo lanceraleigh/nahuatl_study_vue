@@ -5,7 +5,7 @@ defineProps({
   index: { type: Number, required: true },
   mode: { type: String, required: true }
 });
-defineEmits(['edit', 'delete', 'restore', 'set-transitivity']);
+defineEmits(['edit', 'delete', 'restore', 'set-transitivity', 'linked-search']);
 </script>
 
 <template>
@@ -17,9 +17,12 @@ defineEmits(['edit', 'delete', 'restore', 'set-transitivity']);
       <span v-if="result.entry.isAdded" class="dictionary-status">Nueva</span>
       <span v-else-if="result.entry.isEdited" class="dictionary-status">Editada</span>
     </div>
+    
     <p class="muted">{{ result.entry.part_of_speech || '' }}<span v-if="result.entry.class"> · clase {{ result.entry.class }}</span></p>
     <p><strong>Español:</strong> {{ result.entry.spanish || '—' }}</p>
     <p><strong>English:</strong> {{ result.entry.english || '—' }}</p>
+    
+    <button v-if="result.entry.spanish && result.entry.spanish.includes('See ')" @click="$emit('linked-search', true)">search {{result.entry.spanish.split('See ')[1].replace(/\p{P}/gu, '').trim()}}</button>
     <div v-if="/^(tlach)/i.test(result.entry.part_of_speech || '') || result.entry.transitivity" class="transitivity-control">
       <strong>Transitividad:</strong>
       <button type="button" :aria-pressed="result.entry.transitivity === 'transitive'" :class="{ selected: result.entry.transitivity === 'transitive' }" @click="$emit('set-transitivity', result.entry, 'transitive')">Transitivo</button>
@@ -50,6 +53,9 @@ defineEmits(['edit', 'delete', 'restore', 'set-transitivity']);
 </template>
 
 <style scoped>
+button { cursor:pointer; border:1px solid #aabbb1; background:#234b39; color:#f4f8f5; padding:9px 12px; border-radius:8px; }
+
+button:hover { background:#e4efe8; }
 .transitivity-control { display:flex; flex-wrap:wrap; gap:.45rem; align-items:center; margin:.8rem 0; }
 .transitivity-control button { border:1px solid #9aada2; border-radius:8px; padding:.35rem .65rem; cursor:pointer; }
 .transitivity-control button.selected { background:#205a42; color:white; border-color:#205a42; }

@@ -2,7 +2,7 @@
 {
   "name": "Nāhuatl — Herramientas de estudio",
   "short_name": "Nāhuatl",
-  "description": "Herramientas para estudiar náhuatl sin conexión",
+  "description": "Herramientas para estudiar náhuatl",
   "id": "./",
   "start_url": "./",
   "scope": "./",

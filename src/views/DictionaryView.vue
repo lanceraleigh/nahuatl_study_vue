@@ -10,8 +10,11 @@ import DictionaryResult from '../components/dictionary/DictionaryResult.vue';
 
 import { searchMacehualli, searchOccidente } from '../features/dictionary/search';
 
+import { normalize } from '../features/dictionary/normalize';
+
 import { identifyBaseline, combineDictionary, createEntry, exportEdits, hideEntry, importEdits, loadEdits, normalizeEntry, resetEdits, restoreEntry, saveEdits, updateEntry } from '../services/dictionaryEdits';
 
+import {compareCorpusToDictionary} from '../services/possible_additions.js';
 
 
 const query = ref('');
@@ -326,7 +329,7 @@ async function uploadBackup(event) {
 
     <p class="muted">{{ query ? `${results.length} resultado(s)` : `${entries.length.toLocaleString()} entradas disponibles (${baseline.length.toLocaleString()} originales)` }}</p>
 
-    <DictionaryResult v-for="(result, index) in results" :key="result.entry.id" :result="result" :index="index" :mode="mode" @edit="editEntry" @delete="deleteEntry" @restore="entry => restore(entry.id)" @set-transitivity="setTransitivity" />
+    <DictionaryResult v-for="(result, index) in results" :key="result.entry.id" :result="result" :index="index" :mode="mode" @linked-search="query = result.entry.spanish.split('See ')[1].replace(/\p{P}/gu, '').trim()" @edit="editEntry" @delete="deleteEntry" @restore="entry => restore(entry.id)" @set-transitivity="setTransitivity" />
 
   </section>
 

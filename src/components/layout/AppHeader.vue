@@ -1,6 +1,7 @@
 <script setup>
 import { isDark, toggleTheme } from "../../services/theme";
 import LanguageSelector from "./LanguageSelector.vue";
+import {compareCorpusToDictionary} from "../../services/possible_additions.js";
 
 </script>
 <template>
@@ -13,7 +14,7 @@ import LanguageSelector from "./LanguageSelector.vue";
       />
     </RouterLink>
     <nav>
-      <RouterLink to="/diccionario">{{ $t("nav.dictionary") }}</RouterLink>
+      <RouterLink to="/diccionario"@click="compareCorpusToDictionary">{{ $t("nav.dictionary") }}</RouterLink>
       <!-- <RouterLink to="/traductor-conjugador">Conjugador</RouterLink> -->
       <RouterLink to="/tareas">{{ $t("nav.tasks") }}</RouterLink>
       <!-- <RouterLink to="/cartas">Cartas</RouterLink> -->
